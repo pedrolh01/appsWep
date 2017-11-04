@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+	<head>
+		<title>lab3-2 jquery</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<style>
+			.cuadro{
+				background:gray;
+				height:100px;
+				width:100px;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				p_animation();
+				button_cuadro_animation();
+				button_fadein_animation();
+				button_hide_animation();
+				button_pbtn_animation();
+			});
+			function p_animation(){
+				$("#mousep").on({
+					mouseenter: function(){
+						$(this).css("background","red");
+					},
+					mouseleave: function(){
+						$(this).css("background","green");
+					},
+					click: function(){
+						$(this).css("background","blue");
+					}
+				});
+			}
+			function button_cuadro_animation(){
+				$("#cuadro").click(function(){
+					$("div").animate({
+						left: "200px",
+						opacity: "0.5",
+						height: "150px",
+						width: "150px"
+					});
+				});
+			}
+			function button_fadein_animation(){
+				$("#fadein").click(function(){
+					$("#div1").fadeIn();
+					$("#div2").fadeIn("slow");
+					$("#div3").fadeIn(4000);
+				});
+			}
+			function button_hide_animation(){
+				$("#hidec").click(function(){
+					$("#div1").hide();
+					$("#div2").hide("slow",function(){alert("div ocultos");});
+					$("#div3").hide(4000);
+				});
+			}
+			
+			function button_pbtn_animation(){
+				$("#pbtn1").click(function(){
+					$("#ptest1").text("HOLA MUNDO");
+				});
+				$("#pbtn2").click(function(){
+					$("#ptest2").html("<b>HOLA MUNDO</b>");
+				});
+				$("#pbtn4").click(function(){
+					$("#ptest4").val("HOLA MUNDO");
+				});
+				$("#pbtn3").click(function(){
+					$("#ptest3 a").attr("HREF","www.ulacit.ac.cr").text("ULACIT");
+				});
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<button id="cuadro">Mover cuadro</button>
+		<button id="fadein">Fade in</button>
+		<button id="hidec">Hide</button>
+		
+		<p id="mousep">por defecto,todos los elementos HTML son estaticos, para manipular su posicion , hay que utilizar la propiedad del CSS de position</p>
+		
+		<p id="ptest1">Esto es un parrafo</p>
+		<p id="ptest2">Esto es un parrafo</p>
+		<p id="ptest3"><a href="https://www.google.com/">Google</a></p>		
+		<p>Ingresar valor<input type="text" id="ptest4" value="Ingrese un valor" ></p>
+		
+		<button id="pbtn1">Set Texto</button>
+		<button id="pbtn2">Set HTML</button>
+		<button id="pbtn3">Set Valor HREF</button>
+		<button id="pbtn4">Set Valor </button>
+		
+		
+		<div class="cuadro"></div><br> 		
+		<div id="div1" style="width:80;height:80px;display:none;background:yellow;"></div><br> 
+		<div id="div2" style="width:80;height:80px;display:none;background:red;"></div> <br> 
+		<div id="div3" style="width:80;height:80px;display:none;background:black;"></div> <br> 
+	</body>
+	<footer>
+		<script>
+			
+			
+		</script>
+	</footer>
+</html>
+

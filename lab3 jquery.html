@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<title>lab3 jquery</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+		<script>
+			$(document).ready(function(){
+				init();
+			});
+			function init(){
+				$("p").on({
+					mouseenter: function(){
+						$(this).css("background","red");
+					},
+					mouseleave: function(){
+						$(this).css("background","green");
+					},
+					click: function(){
+						$(this).css("background","blue");
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		
+		<p id="planetaazul">click mover parrafo</p>		
+	</body>
+	<footer>
+		<script>
+			
+			
+		</script>
+	</footer>
+</html>
+

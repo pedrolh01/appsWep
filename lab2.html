@@ -2,10 +2,13 @@
 <html>
 	<head>
 		<title>lab2-page1</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<meta></meta>
 		<script>
-		window.onload = int;
-			function int(){
+		$(document).ready(function(){
+			init();
+		});
+			function init(){
 			var planet = document.getElementById("planetaverde");
 			planet.innerHTML = "Alerta  Roja : Tenemos un incendio!";
 			}
